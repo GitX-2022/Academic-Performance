@@ -1,0 +1,92 @@
+<!--Store this code in 'display.html' file inside the 'templates' folder-->
+
+<html lang="en">
+	<head>
+		<title>display</title>
+		<link rel="stylesheet" href="../static/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
+     integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body background-color="#e6ffee">
+		<div class="one">
+			<div class="two">
+				<h5>Academic Performance</h5>
+				<ul>
+					<li><a href="{{url_for('index')}}">Index</a></li>
+					<li><a href="{{url_for('display')}}">Display</a></li>
+                    <li class="active"><a href="{{url_for('display_performance')}}">Display performance</a></li>
+					<li><a href="{{url_for('update')}}">Update</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+				<div class="topbar">
+					<h2>Your performance  </h2>					
+				</div> </br>
+				<div class="contentbar">
+					    
+					    {% block content %}
+						<div class="border">
+							<table class="worddark"></br></br></br></br>
+                                {% for i in subjects %}
+								<tr>
+                                    <td>Performace in {{ i }} : </td>
+									<td>{{ result_final[i] }}</td>
+								</tr>
+                                {% endfor %}
+							</table>
+						</div>
+					{% endblock %}	
+                    <div class="chart-container" style="position: absolute;">
+                        <canvas id="performance1" height="300" width="300" ></canvas>
+                    </div>									
+				</div>
+			</div>        
+    </div>
+
+    <script>
+        let performance_data = JSON.parse( {{ value | tojson }} );
+        let performace_chart = new Chart(performance1, {
+            type: 'pie',
+            data: {
+            labels: {{ subjects | safe }},
+                datasets: [{
+                    label: "performace evaluation",
+                    data: performance_data,
+                    backgroundColor: ['#5DA5DA ', '#FAA43A', '#60BD68',
+                        '#B276B2', '#E16851', '#FB8267'],
+                    borderWidth: 1,
+                    hoverBorderColor: "black",
+                    hoverBorderWidth: 2,
+                    hoverBackgroundColor: 'rgba(154, 245, 140)',
+                    pointHoverRadius: 5
+                }],
+            },
+            options: {
+                    title: {
+                        display: true,
+                            text: "Performace",
+                                fontSize: 20,
+                    },
+                    legend: {
+                        position: "right",
+                            labels: {
+                            fontColor: "gray"
+                        },
+                        display: true,
+                    },
+
+                    elements: {
+                        hitRadius: 3,
+                    }
+            }
+        });
+    </script>
+	</body>
+
+</html>
+

@@ -1,0 +1,42 @@
+<!--Store this code in 'index.html' file inside the 'templates' folder-->
+<html lang="en">
+	<head>
+		<title>index</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+
+	<body background-color="#e6ffee">
+		<div class="one">
+			<div class="two">
+				<h1>Home</h1>
+				<ul>
+					<li class="active"><a href="{{url_for('index')}}">Home</a></li>
+					<li><a href="{{url_for('display')}}">Details</a></li>
+					<li><a href="{{url_for('update')}}">Update</a></li>
+					<li ><a href="{{url_for('display_performance')}}">Display performance</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+				<div class="topbar">
+					<h2>Welcome to the Academic Portal! </h2>					
+				</div></br></br>
+				<div class="contentbar" align="left">
+					<h1>Hey {{ account['name'] }} !</h1>
+					<br><br><br>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Details : <small>Display's your details.</small></h3>
+					<br>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update: <small>Allows you to alter your details.</small></h3>
+					<br>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Display Performace : <small>Displays your percentage in each subject</h3>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;based on you internal marks ,external marks and your attendance.</small></h3>
+					<br>
+					<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout : <small>The session will be removed.</small></h3>
+					<div class="msg">{{ msg }}</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+

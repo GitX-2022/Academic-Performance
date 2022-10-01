@@ -1,0 +1,40 @@
+<!--Store this code in 'update.html' file inside the 'templates' folder-->
+<html lang="en">
+	<head>
+		<title>update</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+	<body background-color="#e6ffee">
+		<div class="one">
+			<div class="two">
+				<h1>Academic Evaluation</h1>
+				<ul>
+					<li><a href="{{url_for('adminindex')}}">Home</a></li>
+					<li class="active"><a href="{{url_for('add_marks')}}">Add Marks</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+				<div class="topbar">
+					<h2>Mark Update</h2>					
+				</div></br></br>
+				<div class="contentbar">
+				<h1>Add your marks</h1></br>
+                <div class="loginbottom">
+			<form action="{{ url_for('add_marks') }}" method="post" autocomplete="off">
+					<div class="msg">{{ msg }}</div>
+					<input type="text" name="roll_no" placeholder="Enter Student Roll No" class="textbox" id="roll_no" required></br></br>
+					<input type="text" name="subject" placeholder="Enter Subject" class="textbox" id="subject" required></br></br>
+					<input type="text" name="internal_marks" placeholder="Enter Internal Mark" class="textbox" id="internal_marks" required></br></br>
+					<input type="text" name="external_marks" placeholder="Enter External Mark" class="textbox" id="external_marks" required></br></br>
+                    <input type="text" name="attendance" placeholder="Enter Attendance" class="textbox" id="attendance" required></br></br>
+					<input type="submit" class="btn" value="Submit">
+			</form>	
+        </div>				
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+

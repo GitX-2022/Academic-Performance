@@ -1,0 +1,30 @@
+<!--Store this code in 'index.html' file inside the 'templates' folder-->
+<html lang="en">
+	<head>
+		<title>admin</title>
+		<link rel="stylesheet" href="../static/style.css">
+	</head>
+
+	<body background-color="#e6ffee">
+		<div class="one">
+			<div class="two">
+				<h1>Admin Panel</h1>
+				<ul>
+					<li class="active"><a href="{{url_for('adminindex')}}">Home</a></li>
+					<li><a href="{{url_for('add_marks')}}">Add Marks</a></li>
+					<li><a href="{{url_for('logout')}}">Log out</a></li>
+				</ul>
+			</div>
+			<div class="content" align="center">
+				<div class="topbar">
+					<h2>Welcome Admin ! </h2>					
+				</div></br></br>
+				<div class="contentbar">
+					<div class="msg">{{ msg }}</div>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+
