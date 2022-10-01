@@ -4,3 +4,5 @@ The fuzzy logic model comprises of the following stages.
 1. Data input/crisp set
 2. Fuzzification
 3. Defuzzification
+
+[The link to the video and explanation can be found here]([https://www.google.com](https://drive.google.com/file/d/1DTNV3HFw5kcLe3gjfBjz4YR0awe0RWYL/view?usp=sharing))
