@@ -5,5 +5,5 @@ The fuzzy logic model comprises of the following stages.
 2. Fuzzification
 3. Defuzzification
 
-[I'm an inline-style link](https://drive.google.com/file/d/1DTNV3HFw5kcLe3gjfBjz4YR0awe0RWYL/view?usp=sharing)
-[arbitrary case-insensitive reference text]: https://drive.google.com/file/d/1DTNV3HFw5kcLe3gjfBjz4YR0awe0RWYL/view?usp=sharing
+[Project video and explanation can be found here](https://drive.google.com/file/d/1DTNV3HFw5kcLe3gjfBjz4YR0awe0RWYL/view?usp=sharing)
+
